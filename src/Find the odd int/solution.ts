@@ -4,7 +4,7 @@ function solve(array: number[]): number{
 
 function findOdd(array: number[]): number{
     let map: Array<Array<number>> = [[], []];
-    let result: number = 0;
+    let result: number = 0.5;
 
     for (let i = 0; i < array.length; i++) {
         if(!map[0].includes(array[i])){
@@ -24,7 +24,7 @@ function findOdd(array: number[]): number{
         }
     }
 
-    return result;
+    return result == 0.5 ? NaN : result;
 }
 
 export {solve};
