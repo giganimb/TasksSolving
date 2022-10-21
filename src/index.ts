@@ -2,11 +2,41 @@ import {solve as solvePermuteAPalindrome} from "./Permute a Palindrome/solution"
 import {solve as solveFindTheOddInt} from "./Find the odd int/solution";
 import {solve as solveReverseOrRotate} from "./Reverse or rotate/solution";
 import {solve as solveSpecialMultiples} from "./Special multiples/solution";
+
 import * as readline from 'node:readline';
 import { stdin as input, stdout as output } from "node:process";
+import { program } from 'commander';
 
+
+program
+  .version('1.0.0', '-v, --version')
+  .usage('[OPTIONS]...')
+  .option('-ps, --palindrome_str <string>', 'param for "Permute a palindrome" task')
+  .option('-foia, --find_odd_int_arr <numbers...>', 'param for "FindThe odd int" task')
+  .option('-smn, --special_multiples_n <number>', 'param for "Special multiples" task')
+  .option('-smmv, --special_multiples_max_value <number>', 'param for "Special multiples" task')
+  .option('-rorns, --reverse_or_rotate_number_string <string>', 'param for "Reverse or rotate" task')
+  .option('-rorcs, --reverse_or_rotate_chunk_size <number>', 'param for "Reverse or rotate" task')
+  .parse(process.argv);
 
 const rl = readline.createInterface({input, output});
+const options = program.opts();
+
+if(options.palindrome_str){
+    console.log("Is your string permutation palidrome? - " + solvePermuteAPalindrome(options.palindrome_str)  + "\n");
+}
+if(options.find_odd_int_arr){
+    let arr: number[] = options.find_odd_int_arr.map((el: string) => parseInt(el));
+    console.log("The odd int - " + solveFindTheOddInt(arr) + "\n");
+}
+if(options.special_multiples_n && options.special_multiples_max_value){
+    console.log("Count of special multiples - " + solveSpecialMultiples(parseInt(options.special_multiples_n), 
+                                                    parseInt(options.special_multiples_max_value)) + "\n");
+}
+if(options.reverse_or_rotate_number_string && options.reverse_or_rotate_chunk_size){
+    console.log("Result number string - " + solveReverseOrRotate(options.reverse_or_rotate_number_string, 
+                                                    parseInt(options.reverse_or_rotate_chunk_size)) + "\n");
+}
 
 info();
 
@@ -54,11 +84,11 @@ rl.on('SIGINT', () => {
 });
 
 function info(){
-    console.log("Hi, User!");
+    console.log("\nHi, User!");
     console.log("Choose a number and input it:");
     console.log("1 - to solve Permute a Palindrome");
     console.log("2 - to solve Find the odd int");
-    console.log("3 - to solve Special numbers");
+    console.log("3 - to solve Special multiples");
     console.log("4 - to solve Reverse or rotate");
     console.log("100 - to reset console");
     console.log("-1 - to exit\n");
