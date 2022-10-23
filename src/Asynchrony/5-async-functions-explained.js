@@ -65,9 +65,9 @@ async function main() {
     };
 
     const connection = await createConnection();
-    await connection.serializeData(data);
-    await prepareData(data, connection);
-    await sendData(connection, data);
+    const preparedData = await prepareData(data, connection);
+    const serializedData = connection.serializeData(preparedData);
+    await sendData(connection, serializedData);
     console.log('Sent');
   } catch (error) {
     console.log(error);
