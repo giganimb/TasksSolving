@@ -3,8 +3,7 @@
   "version": "1.0.0",
   "scripts": {
     "lint": "eslint --ext .js .",
-    "lint:fix": "eslint --ext .js --fix .",
-    "clear": "rm -rf data/*"
+    "lint:fix": "eslint --ext .js --fix ."
   },
   "repository": {
     "type": "git",
