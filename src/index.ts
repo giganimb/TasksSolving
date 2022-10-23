@@ -41,36 +41,44 @@ if(options.reverse_or_rotate_number_string && options.reverse_or_rotate_chunk_si
 info();
 
 rl.on('line', (input) => {
-    if(input == "1"){
-        rl.question("Input string: ", (value) => {
-            console.log("Is your string permutation palidrome? - " + solvePermuteAPalindrome(value)  + "\n");
-        });
-    }
-    else if(input == "2"){
-        rl.question("Input number array separated by a space (example: '2 5 2'): ", (value) => {
-            let arr: number[] = value.split(" ").map((el) => parseInt(el));
-            console.log("The odd int - " + solveFindTheOddInt(arr) + "\n");
-        });
-    }
-    else if(input == "3"){
-        rl.question("Input N and MaxValue separated by a space (example: '3 200'), where N is a number of primes and MaxValue is a upper border of dividends: ", (value) => {
-            let arr: number[] = value.split(" ").map((el) => parseInt(el));
-            console.log("Count of special multiples - " + solveSpecialMultiples(arr[0], arr[1]) + "\n");
-        });
-    }
-    else if(input == "4"){
-        rl.question("Input number string and chunk size separated by a space (example: '123456987654 6'): ", (value) => {
-            let arr: string[] = value.split(" ");
-            console.log("Result number string - " + solveReverseOrRotate(arr[0], parseInt(arr[1])) + "\n");
-        });
-    }
-    else if(input == "100"){
-        console.clear();
-        info();
-    }
-    else if(input == "-1"){
-        console.clear();
-        rl.pause();
+    switch(input){
+        case "1":{
+            rl.question("Input string: ", (value) => {
+                console.log("Is your string permutation palidrome? - " + solvePermuteAPalindrome(value)  + "\n");
+            });
+            break;
+        }
+        case "2":{
+            rl.question("Input number array separated by a space (example: '2 5 2'): ", (value) => {
+                let arr: number[] = value.split(" ").map((el) => parseInt(el));
+                console.log("The odd int - " + solveFindTheOddInt(arr) + "\n");
+            });
+            break;
+        }
+        case "3":{
+            rl.question("Input N and MaxValue separated by a space (example: '3 200'), where N is a number of primes and MaxValue is a upper border of dividends: ", (value) => {
+                let arr: number[] = value.split(" ").map((el) => parseInt(el));
+                console.log("Count of special multiples - " + solveSpecialMultiples(arr[0], arr[1]) + "\n");
+            });
+            break;
+        }
+        case "4":{
+            rl.question("Input number string and chunk size separated by a space (example: '123456987654 6'): ", (value) => {
+                let arr: string[] = value.split(" ");
+                console.log("Result number string - " + solveReverseOrRotate(arr[0], parseInt(arr[1])) + "\n");
+            });
+            break;
+        }
+        case "100":{
+            console.clear();
+            info();
+            break;
+        }
+        case "-1":{
+            console.clear();
+            rl.pause();
+            break;
+        }
     }
 });
 
