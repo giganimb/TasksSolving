@@ -27,12 +27,7 @@ function isPalindrome(str: string): boolean{
         }
     }
 
-    if(countOfSingleLetters > 1){
-        return false;
-    }
-    else{
-        return true;
-    }
+    return countOfSingleLetters <= 1;
 }
 
 export {solve};

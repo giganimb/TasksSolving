@@ -3,7 +3,7 @@ function solve(str: string, chunkSize: number): string{
 }
 
 function revrot(str: string, chunkSize: number): string{
-    if(str.length == 0 || chunkSize <= 0){
+    if(str.length === 0 || chunkSize <= 0){
         return "";
     }
 

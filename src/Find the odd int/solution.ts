@@ -24,7 +24,7 @@ function findOdd(array: number[]): number{
         }
     }
 
-    return result == 0.5 ? NaN : result;
+    return result === 0.5 ? NaN : result;
 }
 
 export {solve};
