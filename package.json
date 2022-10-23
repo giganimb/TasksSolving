@@ -1,7 +1,6 @@
 {
   "name": "tasks",
   "version": "1.0.0",
-  "description": "",
   "scripts": {
     "lint": "eslint --ext .js .",
     "lint:fix": "eslint --ext .js --fix .",
