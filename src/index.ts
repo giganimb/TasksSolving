@@ -1,10 +1,10 @@
 import * as readline from 'node:readline';
 import { stdin as input, stdout as output } from 'node:process';
 import { program } from 'commander';
-import { solve as solvePermuteAPalindrome } from './Permute a Palindrome/solution';
-import { solve as solveFindTheOddInt } from './Find the odd int/solution';
-import { solve as solveReverseOrRotate } from './Reverse or rotate/solution';
-import { solve as solveSpecialMultiples } from './Special multiples/solution';
+import { solve as solvePermuteAPalindrome } from './Permute_a_Palindrome/solution';
+import { solve as solveFindTheOddInt } from './Find_the_odd_int/solution';
+import { solve as solveReverseOrRotate } from './Reverse_or_rotate/solution';
+import { solve as solveSpecialMultiples } from './Special_multiples/solution';
 
 program
   .version('1.0.0', '-v, --version')
